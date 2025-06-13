@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FAFAFA">
+
+    <!-- Logo UTEQ -->
+    <ImageView
+        android:id="@+id/iv_logo"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="24dp"
+        android:contentDescription="Logo UTEQ"
+        android:scaleType="centerInside"
+        android:src="@drawable/logo_uteq"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_max="200dp" />
+
+    <!-- Título -->
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="24dp"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center"
+        android:text="Registro de Usuarios"
+        android:textColor="#4A4A4A"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_logo" />
+
+    <!-- ScrollView con formulario -->
+    <ScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_title">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="24dp">
+
+            <!-- Icono Nombre -->
+            <ImageView
+                android:id="@+id/iv_nombre_icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="16dp"
+                android:src="@drawable/ic_person"
+                android:tint="#666666"
+                app:layout_constraintBottom_toBottomOf="@id/et_nombre"
+                app:layout_constraintStart_toStartOf="@id/et_nombre"
+                app:layout_constraintTop_toTopOf="@id/et_nombre" />
+
+            <!-- Campo Nombre -->
+
+            <!-- Icono Apellido -->
+            <EditText
+                android:id="@+id/et_nombre"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:hint="Nombre"
+                android:inputType="textPersonName"
+                android:paddingStart="48dp"
+                android:paddingTop="12dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="12dp"
+                android:textColor="#333333"
+                android:textColorHint="#999999"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/iv_apellido_icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="16dp"
+                android:src="@drawable/ic_person"
+                android:tint="#666666"
+                app:layout_constraintBottom_toBottomOf="@id/et_apellido"
+                app:layout_constraintStart_toStartOf="@id/et_apellido"
+                app:layout_constraintTop_toTopOf="@id/et_apellido" />
+
+            <!-- Campo Apellido -->
+            <EditText
+                android:id="@+id/et_apellido"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:hint="Apellido"
+                android:inputType="textPersonName"
+                android:paddingStart="48dp"
+                android:paddingTop="12dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="12dp"
+                android:textColor="#333333"
+                android:textColorHint="#999999"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/et_nombre" />
+
+            <!-- Label Fecha Nacimiento -->
+            <TextView
+                android:id="@+id/tv_fecha_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="sans-serif-medium"
+                android:text="Fecha Nacimiento"
+                android:textColor="#666666"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/et_apellido" />
+
+            <!-- Spinner Día -->
+            <Spinner
+                android:id="@+id/spinner_dia"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_marginEnd="8dp"
+                android:entries="@array/dias"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                app:layout_constraintEnd_toStartOf="@id/spinner_mes"
+                app:layout_constraintHorizontal_chainStyle="spread"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_fecha_label" />
+
+            <!-- Spinner Mes -->
+            <Spinner
+                android:id="@+id/spinner_mes"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:entries="@array/meses"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                app:layout_constraintEnd_toStartOf="@id/spinner_año"
+                app:layout_constraintStart_toEndOf="@id/spinner_dia"
+                app:layout_constraintTop_toBottomOf="@id/tv_fecha_label" />
+
+            <!-- Spinner Año -->
+            <Spinner
+                android:id="@+id/spinner_año"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="8dp"
+                android:entries="@array/year"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/spinner_mes"
+                app:layout_constraintTop_toBottomOf="@id/tv_fecha_label" />
+
+            <!-- Label Tipo de Documento -->
+            <TextView
+                android:id="@+id/tv_tipo_documento_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="4dp"
+                android:text="Tipo de Documento"
+                android:textColor="#666666"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/spinner_dia" />
+
+            <!-- Spinner Tipo de Documento -->
+            <Spinner
+                android:id="@+id/spinner_tipo_documento"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:entries="@array/doc"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_tipo_documento_label" />
+
+            <!-- Label Número -->
+            <TextView
+                android:id="@+id/tv_numero_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="4dp"
+                android:text="Número"
+                android:textColor="#666666"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/spinner_tipo_documento" />
+
+            <!-- Icono Número -->
+            <ImageView
+                android:id="@+id/iv_numero_icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="16dp"
+                android:src="@drawable/ic_card"
+                android:tint="#666666"
+                app:layout_constraintBottom_toBottomOf="@id/et_numero"
+                app:layout_constraintStart_toStartOf="@id/et_numero"
+                app:layout_constraintTop_toTopOf="@id/et_numero" />
+
+            <!-- Campo Número -->
+            <EditText
+                android:id="@+id/et_numero"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:hint="Número"
+                android:inputType="text"
+                android:paddingStart="48dp"
+                android:paddingTop="12dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="12dp"
+                android:textColor="#333333"
+                android:textColorHint="#999999"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_numero_label" />
+
+            <!-- Icono Cámara -->
+            <ImageView
+                android:id="@+id/iv_camera_icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="24dp"
+                android:tint="#666666"
+                android:src="@drawable/ic_camera"
+                app:layout_constraintBottom_toBottomOf="@id/btn_foto_perfil"
+                app:layout_constraintStart_toStartOf="@id/btn_foto_perfil"
+                app:layout_constraintTop_toTopOf="@id/btn_foto_perfil" />
+
+            <!-- Botón Foto de Perfil -->
+            <Button
+                android:id="@+id/btn_foto_perfil"
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:gravity="center"
+                android:paddingStart="56dp"
+                android:text="Foto de Perfil"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/et_numero" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
